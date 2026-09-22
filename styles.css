@@ -1,0 +1,252 @@
+/* Chibishoppu landing — brand palette lifted from the POS theme */
+
+:root {
+  --ink: #2d3548;
+  --ink-soft: #616d86;
+  --pink: #ff85a1;
+  --pink-soft: #ffd6e8;
+  --mint: #a3e7d0;
+  --sky: #d8edfc;
+  --butter: #ffe680;
+  --bg: #f4f9fe;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Fredoka', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ---------- floating decorations ---------- */
+.sparkles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.sparkle {
+  position: absolute;
+  color: var(--pink);
+  opacity: 0.35;
+  font-size: 1.4rem;
+}
+
+.s1 { top: 12%; left: 12%; }
+.s2 { top: 20%; right: 15%; color: var(--ink-soft); font-size: 1.1rem; }
+.s3 { top: 55%; left: 7%; color: var(--pink); font-size: 1.8rem; }
+.s4 { top: 60%; right: 8%; font-size: 1.2rem; }
+.s5 { bottom: 18%; left: 20%; color: var(--ink-soft); }
+.s6 { bottom: 25%; right: 18%; }
+
+/* ---------- layout ---------- */
+main {
+  width: 100%;
+  max-width: 640px;
+  padding: 3rem 1.25rem 2rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---------- hero ---------- */
+.hero {
+  text-align: center;
+  padding: 1rem 0 0.5rem;
+}
+
+.logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  object-fit: cover;
+}
+
+h1 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 800;
+  font-size: 2.6rem;
+  color: var(--pink);
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1.25rem;
+  background: var(--pink);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  padding: 0.7rem 1.6rem;
+  border-radius: 14px;
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.cta:hover {
+  background: #ff6b8d;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.cta:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+/* ---------- about ---------- */
+.about {
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+}
+
+.about h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about p {
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+/* ---------- project cards ---------- */
+.projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.card {
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 1.4rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.card:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.card-icon {
+  font-size: 2.2rem;
+  transition: transform 0.15s ease;
+}
+
+.card:hover .card-icon {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.card h2 {
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+}
+
+.card p {
+  margin-top: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.card-link {
+  margin-top: 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pink);
+}
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: auto;
+  padding: 1.5rem 0 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  position: relative;
+  z-index: 1;
+}
+
+footer p + p {
+  margin-top: 0.25rem;
+  opacity: 0.75;
+}
+
+/* ---------- desktop ---------- */
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .cta,
+  .card,
+  .card-icon {
+    transition: none;
+  }
+}
